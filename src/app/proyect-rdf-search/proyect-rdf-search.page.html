@@ -1,0 +1,48 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-title>SearchPedia</ion-title>
+    <ion-buttons slot="start">
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-searchbar animated
+      (ionChange)="buscar($event)">
+  </ion-searchbar>
+</ion-header>
+
+<ion-content #content [scrollEvents]="true">
+  
+  <section *ngFor="let search of searchlist">
+    
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{search.entity}}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content >
+      {{search.abstract}}
+    </ion-card-content>
+  </ion-card>
+</section>
+</ion-content>
+
+<ion-tabs>
+
+  <ion-tab-bar slot="bottom">
+    
+    <ion-tab-button tab="tabSearch">
+      <ion-icon name="search"></ion-icon>
+      <ion-label>Search</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tabProfile">
+      <ion-icon name="person"></ion-icon>
+      <ion-label>Profile</ion-label>
+    </ion-tab-button>
+
+    <ion-tab-button tab="tabBooking">
+      <ion-icon name="settings"></ion-icon>
+      <ion-label>Settings</ion-label>
+    </ion-tab-button>
+
+  </ion-tab-bar>
+</ion-tabs>
